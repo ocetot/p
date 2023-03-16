@@ -25,7 +25,7 @@
             </div>
 
             <div class="form-group">
-            <input type="text" name="store_latitud" class="form-control" placeholder="Latitud">
+            <input type="text" name="store_lantitud" class="form-control" placeholder="Lantitud">
             </div>
 
             <div class="form-group">

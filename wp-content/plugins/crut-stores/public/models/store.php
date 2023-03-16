@@ -3,16 +3,16 @@
 
 class Store{
 
-    public function index()
+  /*   public function index()
     {
         global $wpdb;
         $table_name = $wpdb->prefix . "stores"; 
         $wpdb->get_results('SELECT * FROM '.$table_name . ' WHERE deleted_at IS NULL', OBJECT );
         $response = $wpdb->last_result;
         return $response;
-    }
+    } */
 
-    public function save($store_info)
+   /*  public function save($store_info)
     {
         global $wpdb;
         $table_name = $wpdb->prefix . "stores";
@@ -20,9 +20,20 @@ class Store{
         $response = $wpdb;
         return $this->show($response->insert_id);
        
-    }
+    } */
+    public function save($store_info)
+    {
+        global $wpdb;
+        $table_name = $wpdb->prefix."store";
+        $wpdb->insert($table_name, $store_info);
+        $response = $wpdb;
+        $wpdb->close();
+        return $response;
+       
+    } 
 
-    public function update($store_info, $id)
+
+   /*  public function update($store_info, $id)
     {
         global $wpdb;
         $table_name = $wpdb->prefix . "stores"; 
@@ -48,5 +59,6 @@ class Store{
       $response = $wpdb->rows_affected == 1 ? $id : 0 ;
       return $response;
     }
-
+ */
 }
+?>
